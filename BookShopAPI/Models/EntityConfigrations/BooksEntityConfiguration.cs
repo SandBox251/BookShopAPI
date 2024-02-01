@@ -8,7 +8,8 @@ namespace BookShopAPI.Models.EntityConfigrations
     {
         public void Configure(EntityTypeBuilder<Books> builder)
         {
-
+            builder.HasKey(t => t.Id);
+            builder.Property(t => t.Id).UseIdentityColumn();
         }
     }
 }

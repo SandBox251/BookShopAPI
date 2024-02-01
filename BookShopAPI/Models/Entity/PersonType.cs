@@ -2,7 +2,7 @@
 {
     public class PersonType
     {
-        public int PersonTypeId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public bool IsActive { get; set; }
         public virtual ICollection<Person> Peoples { get; set; }
