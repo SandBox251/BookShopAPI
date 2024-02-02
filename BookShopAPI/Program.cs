@@ -1,4 +1,4 @@
-using CarRentalAPI.Context;
+using BookShopAPI.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

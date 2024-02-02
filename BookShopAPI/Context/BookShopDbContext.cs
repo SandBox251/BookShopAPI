@@ -2,7 +2,7 @@
 using BookShopAPI.Models.EntityConfigrations;
 using Microsoft.EntityFrameworkCore;
 
-namespace CarRentalAPI.Context
+namespace BookShopAPI.Context
 {
     public class BookShopDbContext:DbContext
     {
