@@ -1,8 +1,9 @@
-﻿using static BookShopAPI.Helper.Enums.Enums;
+﻿using BookShopAPI.Models.Entity;
+using static BookShopAPI.Helper.Enums.Enums;
 
-namespace BookShopAPI.Models.Entity
+namespace BookShopAPI.DTOs.Person
 {
-    public class Person
+    public class CreatePersonDTO
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -14,7 +15,6 @@ namespace BookShopAPI.Models.Entity
         public DateOnly BirthDate { get; set; }
         public string Specialization { get; set; }
         public string Salary { get; set; }
-        public bool IsActive { get; set; }
 
 
         public virtual PersonType PersonType { get; set; }

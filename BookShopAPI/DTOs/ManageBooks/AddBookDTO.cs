@@ -1,8 +1,8 @@
 ﻿using static BookShopAPI.Helper.Enums.Enums;
 
-namespace BookShopAPI.Models.Entity
+namespace BookShopAPI.DTOs.ManageBooks
 {
-    public class Books
+    public class AddBookDTO
     {
         public int Id { get; set; }
         public BooksType BookType { get; set; }
@@ -12,6 +12,5 @@ namespace BookShopAPI.Models.Entity
         public DateTime PublishedDate { get; set; }
         public decimal Price { get; set; }
         public int QuantityInStock { get; set; }
-
     }
 }
