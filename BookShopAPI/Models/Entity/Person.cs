@@ -11,7 +11,7 @@ namespace BookShopAPI.Models.Entity
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Password { get; set; }
-        public DateOnly BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         public string Specialization { get; set; }
         public string Salary { get; set; }
         public bool IsActive { get; set; }
