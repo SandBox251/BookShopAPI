@@ -42,7 +42,7 @@ namespace BookShopAPI.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        public async Task<IActionResult> GetBooksAction(string? title, string? Author, int? type)
+        public async Task<IActionResult> GetBooksAction(string? title, string? Author, BooksType? type)
         {
             try
             {
@@ -213,15 +213,17 @@ namespace BookShopAPI.Controllers
         /// Retrieves  All Books In The Data base
         /// </summary>
         [NonAction]
-        public async Task<List<BookCardDTO>> GetBooks(string? title, string? Author, int? type)
+        public async Task<List<BookCardDTO>> GetBooks(string? title, string? Author, BooksType? type)
         {
-            BooksType foo = BooksType.none;
+            BooksType moo = BooksType.none;
             if (Enum.IsDefined(typeof(BooksType), type == null ? 1000 : type))
-                foo = (BooksType)Enum.ToObject(typeof(BooksType), type);
+                moo = (BooksType)Enum.ToObject(typeof(BooksType), type);
             bool flag = title == null && Author == null && type == null ? true : false;
 
+
+
             var query = from t in _BookShopDbContext.Books
-                        where t.BookType == foo
+                        where t.BookType == moo
                         || flag
                         select t;
 
