@@ -1,9 +1,12 @@
-﻿namespace BookShopAPI.DTOs.Books
+﻿using static BookShopAPI.Helper.Enums.Enums;
+
+namespace BookShopAPI.DTOs.Books
 {
     public class BookDetailsDTO
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public BooksType BookType { get; set; }
         public string Description { get; set; }
         public string Author { get; set; }
         public DateTime PublishedDate { get; set; }

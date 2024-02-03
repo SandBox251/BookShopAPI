@@ -7,7 +7,7 @@ namespace BookShopAPI.Interfaces
     interface ISharedInterface
     {        
         //Filltering Book 
-        Task<List<BookCardDTO>> GetBooks(string? title, DateTime? time, BooksType? BookType);
+        Task<List<BookCardDTO>> GetBooks(string? title, string? Author, int? type);
         Task<BookDetailsDTO> GetBookDetails(int Id);
         //Create Account
         Task CreateNewAccount(RegistrationDTO dto);

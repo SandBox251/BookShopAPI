@@ -9,6 +9,7 @@
         }
         public enum BooksType
         {
+            none = 100,
             LiteraryFiction = 0,
             HistoricalFiction = 1,
             ScienceFiction = 2,

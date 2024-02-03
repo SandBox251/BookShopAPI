@@ -1,4 +1,5 @@
-﻿using BookShopAPI.DTOs.Person;
+﻿using BookShopAPI.Context;
+using BookShopAPI.DTOs.Person;
 using BookShopAPI.Interfaces;
 using BookShopAPI.Models.Entity;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,12 @@ namespace BookShopAPI.Controllers
 {
     public class AdminController : ControllerBase, IAdminInterface
     {
+        private readonly BookShopDbContext _BookShopDbContext;
+        public AdminController(BookShopDbContext context)
+        {
+            _BookShopDbContext = context;
+        }
+
         public Task CreatePerson(CreatePersonDTO dto)
         {
             throw new NotImplementedException();
