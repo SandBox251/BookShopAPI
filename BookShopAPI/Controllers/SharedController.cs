@@ -237,6 +237,7 @@ namespace BookShopAPI.Controllers
                 temp.Title = evt.Title;
                 temp.Author = evt.Author;
                 temp.Price = evt.Price;
+                result.Add(temp);
             }
             return result;
         }
