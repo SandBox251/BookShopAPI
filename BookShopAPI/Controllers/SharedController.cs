@@ -42,7 +42,7 @@ namespace BookShopAPI.Controllers
 
         [HttpGet]
         [Route("[action]")]
-        public async Task<IActionResult> GetBooksAction(string? title, string? Author, BooksType? type)
+        public async Task<IActionResult> GetBooksAction(string? title, string? Author, int? type)
         {
             try
             {
@@ -131,6 +131,8 @@ namespace BookShopAPI.Controllers
             user.Password = dto.Password;
             user.FirstName = dto.FirstName;
             user.LastName = dto.LastName;
+            user.BirthDate = dto.BirthDate;
+            user.Gender = dto.Gender;
             user.IsActive = true;
             await _BookShopDbContext.AddAsync(user);
             await _BookShopDbContext.SaveChangesAsync();
@@ -213,15 +215,14 @@ namespace BookShopAPI.Controllers
         /// Retrieves  All Books In The Data base
         /// </summary>
         [NonAction]
-        public async Task<List<BookCardDTO>> GetBooks(string? title, string? Author, BooksType? type)
+        public async Task<List<BookCardDTO>> GetBooks(string? title, string? Author, int? type)
         {
             BooksType moo = BooksType.none;
             if (Enum.IsDefined(typeof(BooksType), type == null ? 1000 : type))
                 moo = (BooksType)Enum.ToObject(typeof(BooksType), type);
+            
             bool flag = title == null && Author == null && type == null ? true : false;
-
-
-
+ 
             var query = from t in _BookShopDbContext.Books
                         where t.BookType == moo
                         || flag
@@ -240,7 +241,9 @@ namespace BookShopAPI.Controllers
             return result;
         }
 
-        #endregion
 
-    }
+
+            #endregion
+
+        }
 }

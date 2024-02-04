@@ -9,7 +9,7 @@
         }
         public enum BooksType
         {
-            none = 1000,
+            none = 100,
             LiteraryFiction = 0,
             HistoricalFiction = 1,
             ScienceFiction = 2,
@@ -24,6 +24,7 @@
             Philosophy = 11,
             Psychology = 12,
             Travel = 13,
+            BlackComedy = 14,
         }
 
     }
