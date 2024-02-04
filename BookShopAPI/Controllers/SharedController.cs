@@ -109,7 +109,7 @@ namespace BookShopAPI.Controllers
         #endregion
         //***************************************************************
 
-        #region Implementations Authantication
+        #region Implementations of Authantication
 
         [NonAction]
         public async Task CreateNewAccount(RegistrationDTO dto)
@@ -183,7 +183,7 @@ namespace BookShopAPI.Controllers
         #endregion
 
         //***********************************************************************************************************************
-        #region Implementations Get Information
+        #region Implementations of Get Information
 
 
         /// <summary>
